@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница 1</title>
+</head>
+<body>
+    <!-- Задание. Выведите содержимое тега title в консоль. -->
+
+    <script>
+
+        // 1
+        console.log(document.title);
+
+        // 2
+        let title = document.getElementsByTagName('title');
+        console.log(title[0].innerText);
+
+        // 3
+        let head = document.getElementsByTagName('head');
+        console.log(head[0].children[2].innerText);
+
+        // 4 На случай если такого тэга нет
+        let list = Array.from(head[0].children);
+        function showtag(tag){
+            if(tag.localName === 'title'){console.log(tag.innerText)}
+        }
+        list.forEach(showtag);
+         
+    </script>
+</body>
+</html>
