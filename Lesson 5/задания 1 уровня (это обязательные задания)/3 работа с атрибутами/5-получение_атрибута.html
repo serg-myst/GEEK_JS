@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+
+    <!-- Задание. Выведите в консоль значение атрибутов data-dismiss
+    и aria-label с помощью метода getAttribute. -->
+
+    <script>
+
+        // getAttribute() возвращает значение указанного атрибута элемента.
+        // Если элемент не содержит данный атрибут, могут быть возвращены null или "" (пустая строка)
+        
+        let element = document.querySelector('.close');
+        let data_dismiss = element.getAttribute('data-dismiss');
+        let aria_label = element.getAttribute('aria-label');
+
+        console.log(data_dismiss);
+        console.log(aria_label);
+
+    </script>
+</body>
+
+</html>
