@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button>Показать сообщение</button>
+    <div class="message">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt, aliquam enim voluptates quibusdam
+        perferendis sint ipsa, nulla quas doloribus nobis libero voluptatem unde inventore. Ut quas corporis fugit error
+        explicabo? Ipsa quos qui similique sequi officia quod ab reiciendis alias!
+    </div>
+
+    <!-- 
+    Задание. Вам нужно чтобы при клике на кнопку появлялось сообщение .message
+    снизу экрана, в общем как сообщения вконтакте.
+    1. Аудио воспроизводите как здесь https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement
+    2. Чтобы получить высоту .message, используйте свойство clientHeight
+    3. Чтобы анимировать перемещение .message используйте стиль transform
+    как здесь https://webref.ru/css/value/translatey
+    -->
+
+    <!--
+    Element.clientHeight - свойство, доступное только для чтения. Для элементов без CSS-стилей, или элементов каркаса строчной разметки - значение равно нулю. Для остальных элементов - значение равно внутренней высоте элемента в пикселах, включая пространство между содержимым элемента и его границей (padding), но исключая высоту полосы горизонтальной прокрутки, и ширину отступа от границы элемента до родительского элемента (margin).
+    https://developer.mozilla.org/ru/docs/Web/API/Element/clientHeight
+    -->
+
+    <script>
+
+        let btn = document.querySelector('button');
+        let msg = document.querySelector('.message');
+        let msg_music = new Audio('notification.mp3');
+
+        btn.addEventListener('click', function(){
+            //console.log(msg.clientHeight);
+            //console.log(msg.style.transform);
+           
+            // translateY - положительное значение сдвигает вниз, отрицательное значение сдвигает вверх
+            msg.style.transform = `translateY(-${msg.clientHeight}px)`;
+            msg_music.play();
+
+        });
+        
+    </script>
+</body>
+
+</html>
